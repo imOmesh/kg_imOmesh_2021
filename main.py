@@ -7,17 +7,14 @@
 
 def checkMapping(str_dict_1, str_dict_2):
     if not str_dict_1 and not str_dict_2:
-        # print ('true')
         return True
 
     sorted_dict = sorted(list(str_dict_1.items()), key=lambda x: -x[1])
     if not sorted_dict:
-        # print ('false')
         return False
     lar_occ = sorted_dict[0]
     get_possible = [(item[1], item[0]) for item in str_dict_2.items() if item[1] >= lar_occ[1]]
     if not get_possible:
-        # print ('false')
         return False
     def getMin(elements):
         minimum = float('inf')
@@ -38,9 +35,7 @@ def checkMapping(str_dict_1, str_dict_2):
         del new_str_dict_2[element[1]]
     temp = checkMapping(new_str_dict_1, new_str_dict_2)
     if temp:
-        # print('true')
         return True
-    # print ('false')
     return False
 if __name__ == '__main__':
     import sys
